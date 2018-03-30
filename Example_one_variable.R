@@ -37,6 +37,8 @@ diamonds$price < 500
 sum(diamonds$price < 500)
 length(which(diamonds$price < 500))
 
+#other method
+summary(diamonds$price < 500)
 
 diamonds$price >= 15000
 sum(diamonds$price >= 15000)
