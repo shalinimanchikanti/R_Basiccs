@@ -19,24 +19,10 @@ ggplot(diamonds, aes(x = color, y = price) ) +
 
 ggplot(diamonds, aes(x = cut, y = price) )+ geom_boxplot()
 
-# There won’t be a solution video for this
-# exercise so go to the discussion thread for either
-# BOXPLOTS BY CLARITY, BOXPLOT BY COLOR, or BOXPLOTS BY CUT
-# to share you thoughts and to
-# see what other people found.
-
-# You can save images by using the ggsave() command.
-# ggsave() will save the last plot created.
-# For example...
-#                  qplot(x = price, data = diamonds)
-#                  ggsave('priceHistogram.png')
-
-# ggsave currently recognises the extensions eps/ps, tex (pictex),
-# pdf, jpeg, tiff, png, bmp, svg and wmf (windows only).
-
-# Copy and paste all of the code that you used for
-# your investigation, and submit it when you are ready.
-# =================================================================
-
+#summary,IQR
 by(pf$price,pf$color,summary)
 by(pf$price,pf$color,IQR)
+
+# Investigate the price per carat of diamonds across
+# the different colors of diamonds using boxplots.
+ggplot(diamonds, aes(x = color, y = price/cut) )+ geom_boxplot()
