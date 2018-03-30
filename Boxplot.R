@@ -26,3 +26,15 @@ by(pf$price,pf$color,IQR)
 # Investigate the price per carat of diamonds across
 # the different colors of diamonds using boxplots.
 ggplot(diamonds, aes(x = color, y = price/cut) )+ geom_boxplot()
+
+
+#using the frequency of polygon
+ggplot()+
+  geom_freqpoly(diamonds, mapping = aes(x =carat ))
+
+ggplot(diamonds, aes(x = carat)) +
+  geom_freqpoly(binwidth = 0.1) +
+  scale_x_continuous(limit = c(0,5),breaks = seq(0,5,0.1)) +
+  scale_y_continuous(limits = c(0,12500), breaks = seq(0,12500,1000))
+
+by(diamonds$price)
