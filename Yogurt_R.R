@@ -66,10 +66,10 @@ nci.lon.samp <- melt(as.matrix(nci[1:200, ]))
 names(nci.lon.samp) <- c('gene','case','value')
 
 head(nci.lon.samp)
-
 ## creatign the heat map
 library(ggplot2)
 ggplot(aes(x = case, y = gene, fill = value), 
        data = nci.lon.samp)+
         geom_tile()+
     scale_fill_gradientn(colours = colorRampPalette(c('blue','red'))(100))
+
